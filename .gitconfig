@@ -1,0 +1,46 @@
+[user]
+	name = Maksim Kostromin
+[core]
+	fileMode = false
+	autocrlf = input
+	eol = lf
+[alias]
+	l = log --pretty=format:\"%Cred%h%Creset %C(Yellow)%an%Creset %C(white)%ar%Creset: %C(cyan)%s%Creset\"
+	f = fetch -pat --all --tags --prune-tags --force
+	b = branch
+	bd = branch -D
+	m = merge
+	s = status
+	co = checkout
+	cb = checkout -b
+	com = checkout master
+	co- = checkout -- .
+	rb = rebase
+	rbi = rebase -i
+	rbom = rebase origin/master
+	rba = rebase --abort
+	rbc = rebase --continue
+	rsh = reset --hard
+	rshom = reset --hard origin/master
+	cfg = config --global --edit
+	chmod = update-index --chmod=+x
+	ca = commit -a --amend
+	cam = commit -a --amend
+	can = commit -a --amend --no-edit --reset-author
+	ps = push
+	psa = push --all
+	psf = push --force
+	pso = push origin
+	psof = push origin --force
+	psom = push origin master
+	psomf = push origin master --force
+  psdo = push --delete origin
+  psdof = push --delete origin -f
+  psdom = push --delete origin master
+  psdomf = push --delete origin master -f
+	pl = pull
+	plf = pull --force
+	plo = pull origin
+	plof = pull origin -f
+	plom = pull origin master
+	plomf = pull origin master --force
