@@ -34,10 +34,10 @@
 	psof = push origin --force
 	psom = push origin master
 	psomf = push origin master --force
-  psdo = push --delete origin
-  psdof = push --delete origin -f
-  psdom = push --delete origin master
-  psdomf = push --delete origin master -f
+	psdo = push --delete origin
+	psdof = push --delete origin -f
+	psdom = push --delete origin master
+	psdomf = push --delete origin master -f
 	pl = pull
 	plf = pull --force
 	plo = pull origin
