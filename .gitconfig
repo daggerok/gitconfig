@@ -4,29 +4,57 @@
 	fileMode = false
 	autocrlf = input
 	eol = lf
+
+# dif-so-fancy
+# brew search diff-so-fancy
+# begin https://github.com/so-fancy/diff-so-fancy
+
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+# dif-so-fancy end
+
 [alias]
 	l = log --pretty=format:\"%Cred%h%Creset %C(Yellow)%an%Creset %C(white)%ar%Creset: %C(cyan)%s%Creset\"
 	f = fetch -pat --all --tags --prune-tags --force
 	b = branch
 	bd = branch -D
+	bdo = push origin --delete
 	m = merge
 	s = status
 	co = checkout
 	cb = checkout -b
 	com = checkout master
 	co- = checkout -- .
-	rb = rebase
+	rb = rebase --reapply-cherry-picks
 	rbi = rebase -i
-	rbom = rebase origin/master
+	rbom = rebase --reapply-cherry-picks origin/master
 	rba = rebase --abort
 	rbc = rebase --continue
 	rsh = reset --hard
 	rshom = reset --hard origin/master
 	cfg = config --global --edit
 	chmod = update-index --chmod=+x
-	ca = commit -a --amend
-	cam = commit -a --amend
-	can = commit -a --amend --no-edit --reset-author
+	ca = commit -a --amend --allow-empty
+	cam = commit -a --amend --allow-empty
+	can = commit -a --amend --no-edit --reset-author --allow-empty
 	ps = push
 	psa = push --all
 	psf = push --force
